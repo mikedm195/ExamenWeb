@@ -17,8 +17,7 @@ function login() {
 		success: function(data, textStatus, jqXHR){
             if(data.vino.length > 0){
                 localStorage.setItem("session", data.vino.id_cliente);
-                window.location = "index.html";
-                window.location.replace("index.html");
+                window.location = "index.html";                
             }else{
                 alert("Usuario y/o contraseña incorrectos");
             }

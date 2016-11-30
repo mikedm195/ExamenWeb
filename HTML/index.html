@@ -21,6 +21,15 @@
 
 <body>
 
+    <script type="text/javascript">
+        if(localStorage.getItem("session") == ''){
+            $('#loginBtn').hide();
+            $('#logoutBtn').show();
+        }else{
+            $('#loginBtn').show();
+            $('#logoutBtn').hide();
+        }
+    </script>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -54,7 +63,8 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="loginBtn"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li id="logoutBtn"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
