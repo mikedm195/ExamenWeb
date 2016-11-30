@@ -23,6 +23,7 @@ function buscaCliente(){
 		success: function(data, textStatus, jqXHR){
             var cliente = data.vino;
             console.log(cliente);
+            console.log(data);
             if(cliente){
                 $('#nombreCliente').val(cliente.id);
             	$('#apPaternoCliente').val(cliente.nombre);
