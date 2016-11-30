@@ -15,6 +15,11 @@ function login() {
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
+            if(data.vino.length > 0){
+                localStorage.setItem("session", data.vino.id_user);
+            }else{
+                alert("Usuario y/o contraseña incorrectos");
+            }
 			alert(JSON.stringify(data));
 			//$('#btnBorrar').show();
 			//$('#Idvino').val(data.id);
