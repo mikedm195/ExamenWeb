@@ -1,10 +1,12 @@
-console.log(localStorage.getItem("session"));
+
 if(localStorage.getItem("session") != ''){
-    console.log("out");
     $('#loginBtn').hide();
     $('#logoutBtn').show();
-}else{
-    console.log("in");
+}else{    
     $('#loginBtn').show();
     $('#logoutBtn').hide();
+}
+
+function logout(){
+    localStorage.setItem("session", '');
 }
