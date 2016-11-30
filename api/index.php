@@ -8,6 +8,7 @@ require 'cruds/clientes.php';
 require 'cruds/productos.php';
 require 'cruds/tiendas.php';
 require 'cruds/promociones.php';
+require 'cruds/reportes.php';
 
 function getConnection() {
 	$dbhost="localhost";
