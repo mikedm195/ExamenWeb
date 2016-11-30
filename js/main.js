@@ -21,14 +21,14 @@ function buscaCliente(){
 		url: url,
 		dataType: "json",
 		success: function(data, textStatus, jqXHR){
-            var cliente = data.vino.length;
-            if(cliente > 0){
-                $('#nombreCliente').val(coiente.id);
-            	$('#apPaternoCliente').val(coiente.nombre);
-            	$('#apMaternoCliente').val(coiente.uvas);
-            	$('#fotoCliente').val(coiente.pais);
-            	$('#telefonoCliente').val(coiente.region);
-            	$('#membresiaCliente').val(coiente.anio);
+            var cliente = data.vino;
+            if(cliente){
+                $('#nombreCliente').val(cliente.id);
+            	$('#apPaternoCliente').val(cliente.nombre);
+            	$('#apMaternoCliente').val(cliente.uvas);
+            	$('#fotoCliente').val(cliente.pais);
+            	$('#telefonoCliente').val(cliente.region);
+            	$('#membresiaCliente').val(cliente.anio);
             }else{
                 alert("Usuario y/o contraseña incorrectos");
             }
