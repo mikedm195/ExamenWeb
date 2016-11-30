@@ -76,6 +76,11 @@ function  actualizarCliente(){
 
 //============tienda======================//
 buscarTiendas();
+
+$('#listaTiendas a').live('click', function() {
+	findById($(this).data('identidad'));
+});
+
 function buscarTiendas() {
     var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/tienda";
 	$.ajax({
@@ -86,8 +91,22 @@ function buscarTiendas() {
             data = data.tiendas;
         	$('#listaTiendas li').remove();
         	$.each(data, function(index, tienda) {
-        		$('#listaTiendas').append("<li class='list-group-item'><a href='#' data-identidad='"+ tienda.id_tienda + '">'+tienda.nombre+'</a></li>');
+        		$('#listaTiendas').append('<li class="list-group-item"><a href="#" data-identidad="' + tienda.id_tienda + '">'+tienda.nombre+'</a></li>');
         	});
+		}
+	});
+}
+
+function buscaTiendaId(id) {
+    var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/tienda/"+id;
+	$.ajax({
+		type: 'GET',
+		url: url,
+		dataType: "json",
+		success: function(data){
+			console.log('findById con exito: ' + data.nombre);
+			vinoActual = data;
+			renderDetails(vinoActual);
 		}
 	});
 }
