@@ -16,8 +16,11 @@ function login() {
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
             if(data.vino.length > 0){
+                a = data.vino[0].id_cliente;
+                localStorage.setItem("session", a);
+                console.log(localStorage.getItem("session"));
                 localStorage.setItem("session", data.vino[0].id_cliente);
-                alert(localStorage.getItem("session"));
+                //alert(localStorage.getItem("session"));
                 //window.location = "index.html";
             }else{
                 alert("Usuario y/o contraseña incorrectos");
