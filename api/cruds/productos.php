@@ -1,6 +1,5 @@
 <?php
 
-$app = new Slim();
 // Definicion de end points y funciones callback
 $app->get('/producto', 'getProductos');
 $app->get('/producto/:id', 'getProducto');
@@ -8,7 +7,6 @@ $app->post('/producto', 'addProducto');
 $app->put('/producto/:id', 'updateProducto');
 $app->delete('/producto/:id','deleteProducto');
 
-$app->run();
 
 function getProductos() {
     $sql = "SELECT * FROM exf_producto";
