@@ -30,8 +30,7 @@ function getLogIn() {
 	}
 }
 
-function getCliente($id) {
-	select * from exf_cliente where id_cliente = 1;
+function getCliente($id) {	
 	$sql = "select * from exf_cliente where id_cliente=:id";
 	try {
 		$db = getConnection();
