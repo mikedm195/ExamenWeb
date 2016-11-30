@@ -25,16 +25,8 @@
 
         <script type="text/javascript">
             function hola(){
-                alert(localStorage.getItem("session"));
-                if(localStorage.getItem("session") == ''){
-                    $('#loginBtn').hide();
-                    $('#logoutBtn').show();
-                }else{
-                    $('#loginBtn').show();
-                    $('#logoutBtn').hide();
-                }
-            }
-            window.onload = hola;
+
+            }            
         </script>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -177,8 +169,7 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="../js/jquery.js"></script>
-
+    <script src="../js/main.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
 
