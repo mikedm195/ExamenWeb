@@ -31,6 +31,8 @@ function buscaCliente(){
             	$('#fotoCliente').val(cliente.foto);
             	$('#telefonoCliente').val(cliente.telefono);
             	$('#membresiaCliente').val(cliente.membresia);
+                $('#userCliente').val(cliente.user);
+            	$('#passwordCliente').val(cliente.password);
             }else{
                 alert("Usuario y/o contraseña incorrectos");
             }
@@ -39,6 +41,35 @@ function buscaCliente(){
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			alert('Error en la funcion getCliente: ' + textStatus);
+		}
+	});
+}
+
+function obtenerDatosCliente() {
+	return JSON.stringify({
+            "nombre": $('#nombreCliente').val(),
+            "apPaterno": $('#apPaternoCliente').val(),
+            "apMaterno": $('#apMaternoCliente').val(),
+            "foto": $('#fotoCliente').val(),
+            "telefono": $('#telefonoCliente').val(),
+            "membresia": $('#membresiaCliente').val()
+		});
+}
+
+function  actualizarCliente(){
+    var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/cliente/" + localStorage.getItem("session");
+    console.log('updateCliente');
+	$.ajax({
+		type: 'PUT',
+		contentType: 'application/json',
+		url: url,
+		dataType: "jsonp",
+		data: obtenerDatosCliente(),
+		success: function(data, textStatus, jqXHR){
+			console.log('Cliente actualizado exitosamente');
+		},
+		error: function(jqXHR, textStatus, errorThrown){
+			alert('Error en la funcion actualizaVino: ' + textStatus);
 		}
 	});
 }

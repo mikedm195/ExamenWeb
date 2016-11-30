@@ -5,7 +5,9 @@ CREATE TABLE exf_cliente (
     apMaterno varchar(20) not null,
     foto varchar(50),
     telefono varchar(20),
-    membresia varchar(20)
+    membresia varchar(20),
+    user varchar(20) not null,
+    password varchar(20) not null
 );
 
 CREATE TABLE exf_producto (
