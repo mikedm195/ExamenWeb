@@ -1,4 +1,4 @@
-function onload(){
+
     alert(localStorage.getItem("session"));
     if(localStorage.getItem("session") == ''){
         $('#loginBtn').hide();
@@ -7,4 +7,3 @@ function onload(){
         $('#loginBtn').show();
         $('#logoutBtn').hide();
     }
-}
