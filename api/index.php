@@ -22,9 +22,9 @@ function getLogIn() {
 		$stmt->bindParam("user", $cliente->user);
 		$stmt->bindParam("password", $cliente->password);
 		$stmt->execute();
-		$existe = $stmt->fetchAll(PDO::FETCH_OBJ);
+		$vino = $stmt->fetchObject();
 		$db = null;
-		echo 'existe ' . $existe;
+		echo 'existe ' . $vino;
 		echo '{"vino": ' . json_encode($vinos) . '}';
 	} catch(PDOException $e) {
 		echo '{"error":{"text":'. $e->getMessage() .'}}';
