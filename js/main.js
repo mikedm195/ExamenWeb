@@ -77,9 +77,7 @@ function  actualizarCliente(){
 //============tienda======================//
 buscarTiendas();
 
-$('#listaTiendas a').live('click', function() {
-	buscaTiendaId($(this).data('identidad'));
-});
+$('#listaTiendas a'));
 
 function buscarTiendas() {
     var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/tienda";
