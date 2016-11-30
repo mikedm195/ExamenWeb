@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Vinos de la casa Morales</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+<div class="header">
+	<input type="text" id="llaveBuscar"/>
+	<button id="btnBuscar">Buscar</button>
+	<button id="btnAgregar">Agregar botella de vino</button>
+</div>
+
+
+<div class="leftArea">
+<ul id="listaVino"></ul>
+</div>
+
+<form id="formaVino">
+	
+<div class="mainArea">
+
+<label>Id:</label>
+<input id="Idvino" name="id" type="text" disabled />
+
+<label>Nombre:</label>
+<input type="text" id="nombre" name="nombre" required>
+
+<label>Uvas:</label>
+<input type="text" id="uvas" name="uvas"/>
+
+<label>Pa&iacute;s:</label>
+<input type="text" id="pais" name="pais"/>
+
+<label>Regi&oacute;n:</label>
+<input type="text" id="region" name="region"/>
+
+<label>A&ntilde;o:</label>
+<input type="text" id="anio" name="anio"/>
+
+<button id="btnGuardar">Guardar</button>
+<button id="btnBorrar">Borrar</button>
+
+</div>
+
+<div class="rightArea">
+
+<img id="pic" height="300"/>
+
+<label>Descripci&oacute;n del producto:</label>
+<textarea id="descripcion" name="descripcion"></textarea>
+</div>
+
+</form>
+
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
