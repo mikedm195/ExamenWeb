@@ -83,12 +83,10 @@ function buscarTiendas() {
 		url: url,
 		dataType: "json",
 		success: function(data, textStatus, errorThrown) {
-            console.log(data);
             data = data.tiendas;
         	$('#listaTiendas li').remove();
         	$.each(data, function(index, tienda) {
-                console.log(tienda);
-        		$('#listaTiendas').append('<li><a href="#" data-identidad="' + tienda.id_tienda + '">'+tienda.nombre+'</a></li>');
+        		$('#listaTiendas').append('<li class="list-group-item"><a href="#" data-identidad="' + tienda.id_tienda + '">'+tienda.nombre+'</a></li>');
         	});
 		}
 	});
