@@ -77,12 +77,14 @@ function  actualizarCliente(){
 //============tienda======================//
 buscarTiendas();
 function buscarTiendas() {
+    console.log(tienda);
     var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/tienda";
 	$.ajax({
 		type: 'GET',
 		url: url,
 		dataType: "json",
 		success: function(data, textStatus, errorThrown) {
+            data = data.tiendas;
         	$('#listaTiendas li').remove();
         	$.each(data, function(index, tienda) {
                 console.log(tienda);
