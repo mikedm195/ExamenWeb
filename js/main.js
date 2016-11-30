@@ -1,5 +1,6 @@
-
-alert(localStorage.getItem("session"));
+var a = "hola"
+localStorage.setItem("lastname", a);
+console.log(localStorage.getItem("lastname"));
 if(localStorage.getItem("session") == ''){
     $('#loginBtn').hide();
     $('#logoutBtn').show();

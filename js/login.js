@@ -16,6 +16,7 @@ function login() {
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
             if(data.vino.length > 0){
+                alert(data.vino.id_cliente);
                 localStorage.setItem("session", data.vino.id_cliente);
                 alert(localStorage.getItem("session"));
                 window.location = "index.html";
