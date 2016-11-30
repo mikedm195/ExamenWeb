@@ -32,7 +32,7 @@ function getLogIn() {
 
 function getCliente($id) {
 	select * from exf_cliente where id_cliente = 1;
-	$sql = "SELECT * FROM exf_cliente WHERE id_cliente=:id";
+	$sql = "select * from exf_cliente where id_cliente=:id";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
