@@ -16,9 +16,9 @@ function login() {
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
-			alert('Vino creado exitosamente');
-			$('#btnBorrar').show();
-			$('#Idvino').val(data.id);
+			alert(data);
+			//$('#btnBorrar').show();
+			//$('#Idvino').val(data.id);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			alert('Error en la funcion agregaVino: ' + textStatus);
