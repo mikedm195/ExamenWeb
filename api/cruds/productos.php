@@ -66,7 +66,7 @@ function updateProducto($id) {
 	$request = Slim::getInstance()->request();
 	$body = $request->getBody();
 	$producto = json_decode($body);
-	$sql = "UPDATE exf_producto SET :nombre, :descripcion, :foto, :cantidad, :precio, :impuesto WHERE id_producto=:id";
+	$sql = "UPDATE exf_producto SET nombre=:nombre, descripcion=:descripcion, foto=:foto, cantidad=:cantidad, precio=:precio, impuesto=:impuesto WHERE id_producto=:id";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
@@ -75,7 +75,7 @@ function updateProducto($id) {
 		$stmt->bindParam("foto", $producto->foto);
 		$stmt->bindParam("cantidad", $producto->cantidad);
 		$stmt->bindParam("precio", $producto->precio);
-		$stmt->bindParam("impuesto", $producto->impuesto);		
+		$stmt->bindParam("impuesto", $producto->impuesto);
 		$stmt->bindParam("id", $id);
 		$stmt->execute();
 		$db = null;
