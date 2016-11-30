@@ -45,26 +45,26 @@ function getCliente($id) {
 	}
 }
 
-function addVino() {
+function addCliente() {
 	error_log('addCliente\n', 3, '/var/tmp/php.log');
         // El objeto request facilita el acceso a los datos de la peticion
         // En este caso la representacion JSON de un objeto Vino.
 	$request = Slim::getInstance()->request();
-	$vino = json_decode($request->getBody());
-	$sql = "INSERT INTO Vino (nombre, uvas, pais, region, anio, descripcion) VALUES (:nombre, :uvas, :pais, :region, :anio, :descripcion)";
+	$cliente = json_decode($request->getBody());
+	$sql = "INSERT INTO exf_cliente (nombre, apPaterno, apMaterno, foto, telefono, membresia) VALUES (:nombre, :apPaterno, :apMaterno, :foto, :telefono, :membresia)";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
-		$stmt->bindParam("nombre", $vino->nombre);
-		$stmt->bindParam("uvas", $vino->uvas);
-		$stmt->bindParam("pais", $vino->pais);
-		$stmt->bindParam("region", $vino->region);
-		$stmt->bindParam("anio", $vino->anio);
-		$stmt->bindParam("descripcion", $vino->descripcion);
+		$stmt->bindParam("nombre", $cliente->nombre);
+		$stmt->bindParam("uvas", $cliente->apPaterno);
+		$stmt->bindParam("pais", $cliente->apMaterno);
+		$stmt->bindParam("region", $cliente->foto);
+		$stmt->bindParam("anio", $cliente->telefono);
+		$stmt->bindParam("descripcion", $cliente->membresia);
 		$stmt->execute();
-		$vino->id = $db->lastInsertId();
+		$cliente->id = $db->lastInsertId();
 		$db = null;
-		echo json_encode($vino);
+		echo json_encode($cliente);
 	} catch(PDOException $e) {
 		error_log($e->getMessage(), 3, '/var/tmp/php.log');
 		echo '{"error":{"text":'. $e->getMessage() .'}}';
