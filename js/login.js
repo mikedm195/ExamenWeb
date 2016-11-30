@@ -15,7 +15,7 @@ function login() {
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
-			alert(json.stringify(data));
+			alert(JSON.stringify(data));
 			//$('#btnBorrar').show();
 			//$('#Idvino').val(data.id);
 		},
