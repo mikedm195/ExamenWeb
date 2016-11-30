@@ -5,7 +5,7 @@ require 'Slim/Slim.php';
 $app = new Slim();
 // Definicion de end points y funciones callback
 $app->get('/cliente', 'getCliente');
-$app->p('/login', 'getLogIn');
+$app->post('/login', 'getLogIn');
 $app->post('/cliente', 'addCliente');
 $app->put('/cliente/:id', 'updateCliente');
 $app->delete('/cliente/:id','deleteCliente');
@@ -22,7 +22,7 @@ function getLogIn() {
 		$stmt->bindParam("user", $cliente->user);
 		$stmt->bindParam("password", $cliente->password);
 		$stmt->execute();
-		$vino = $stmt->fetchObject();
+		$stmt->fetchAll(PDO::FETCH_OBJ)
 		$db = null;
 		echo 'existe ' . $vino;
 		echo '{"vino": ' . json_encode($vinos) . '}';
