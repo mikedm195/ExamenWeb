@@ -2,8 +2,8 @@
 
 $app = new Slim();
 // Definicion de end points y funciones callback
-$app->get('/productos', 'getProductos');
-$app->get('/productos/:id', 'getProducto');
+$app->get('/producto', 'getProductos');
+$app->get('/producto/:id', 'getProducto');
 $app->post('/producto', 'addProducto');
 $app->put('/producto/:id', 'updateProducto');
 $app->delete('/producto/:id','deleteProducto');
