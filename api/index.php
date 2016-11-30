@@ -51,16 +51,18 @@ function addCliente() {
         // En este caso la representacion JSON de un objeto Vino.
 	$request = Slim::getInstance()->request();
 	$cliente = json_decode($request->getBody());
-	$sql = "INSERT INTO exf_cliente (nombre, apPaterno, apMaterno, foto, telefono, membresia) VALUES (:nombre, :apPaterno, :apMaterno, :foto, :telefono, :membresia)";
+	$sql = "INSERT INTO exf_cliente (nombre, apPaterno, apMaterno, foto, telefono, membresia, user, password) VALUES (:nombre, :apPaterno, :apMaterno, :foto, :telefono, :membresia, :user, :password)";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("nombre", $cliente->nombre);
-		$stmt->bindParam("uvas", $cliente->apPaterno);
-		$stmt->bindParam("pais", $cliente->apMaterno);
-		$stmt->bindParam("region", $cliente->foto);
-		$stmt->bindParam("anio", $cliente->telefono);
-		$stmt->bindParam("descripcion", $cliente->membresia);
+		$stmt->bindParam("apPaterno", $cliente->apPaterno);
+		$stmt->bindParam("apMaterno", $cliente->apMaterno);
+		$stmt->bindParam("foto", $cliente->foto);
+		$stmt->bindParam("telefono", $cliente->telefono);
+		$stmt->bindParam("membresia", $cliente->membresia);
+		$stmt->bindParam("user", $cliente->user);
+		$stmt->bindParam("password", $cliente->password);
 		$stmt->execute();
 		$cliente->id = $db->lastInsertId();
 		$db = null;
