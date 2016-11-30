@@ -11,7 +11,7 @@ $app->delete('/producto/:id','deleteProducto');
 $app->run();
 
 function getProductos() {
-    $sql = "select * FROM exf_producto";
+    $sql = "SELECT * FROM exf_producto";
 	try {
 		$db = getConnection();
 		$stmt = $db->query($sql);
