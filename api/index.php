@@ -96,8 +96,8 @@ function updateCliente($id) {
 	}
 }
 
-function deleteVino($id) {
-	$sql = "DELETE FROM Vino WHERE id=:id";
+function deleteCliente($id) {
+	$sql = "DELETE FROM exf_cliente WHERE id_cliente=:id";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
