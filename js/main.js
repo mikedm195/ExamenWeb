@@ -8,6 +8,7 @@ if(localStorage.getItem("session") != ''){
     $('#miInformacion').hide();
 }
 
+//============Cliente======================//
 buscaCliente();
 function logout(){
     localStorage.setItem("session", '');
@@ -69,6 +70,23 @@ function  actualizarCliente(){
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			alert('Error en la funcion actualizaVino: ' + textStatus);
+		}
+	});
+}
+
+//============tienda======================//
+buscarTiendas();
+function buscarTiendas() {
+    var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/tienda";
+	$.ajax({
+		type: 'GET',
+		url: url,
+		dataType: "json",
+		success: function(data, textStatus, errorThrown) {
+        	$('#listaTiendas li').remove();
+        	$.each(data, function(index, tienda) {
+        		$('#listaTiendas').append('<li><a href="#" data-identidad="' + tienda.id_tienda + '">'+tienda.nombre+'</a></li>');
+        	});
 		}
 	});
 }
