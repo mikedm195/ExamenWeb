@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EzMoney | LogIn</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="container">
+      <div class="col-md-3"></div>
+      <div class = "col-md-6">
+        <form class="form-signin" action="../PHP/login.php" method="post">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <hr>
+            <br>
+            <input type="hidden" name="redirect" value="<?php echo $_POST['redirect']; ?>">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="username" required autofocus>
+            <br>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+            <br>
+            <br>
+            <input type="submit" class="btn btn-lg btn-primary btn-block" />
+            <br>
+                Don't have an account yet?
+                <a href="register.html" >Create an account</a>            
+            <br/>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
