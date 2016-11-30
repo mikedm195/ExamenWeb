@@ -42,18 +42,16 @@ function addProducto() {
         // En este caso la representacion JSON de un objeto Vino.
 	$request = Slim::getInstance()->request();
 	$producto = json_decode($request->getBody());
-	$sql = "INSERT INTO exf_producto (nombre, apPaterno, apMaterno, foto, telefono, membresia, user, password) VALUES (:nombre, :apPaterno, :apMaterno, :foto, :telefono, :membresia, :user, :password)";
+	$sql = "INSERT INTO exf_producto (nombre, descripcion, foto, cantidad, precio, impuesto) VALUES (:nombre, :descripcion, :foto, :cantidad, :precio, :impuesto)";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("nombre", $producto->nombre);
-		$stmt->bindParam("apPaterno", $producto->apPaterno);
-		$stmt->bindParam("apMaterno", $producto->apMaterno);
+		$stmt->bindParam("descripcion", $producto->descripcion);
 		$stmt->bindParam("foto", $producto->foto);
-		$stmt->bindParam("telefono", $producto->telefono);
-		$stmt->bindParam("membresia", $producto->membresia);
-		$stmt->bindParam("user", $producto->user);
-		$stmt->bindParam("password", $producto->password);
+		$stmt->bindParam("cantidad", $producto->cantidad);
+		$stmt->bindParam("precio", $producto->precio);
+		$stmt->bindParam("impuesto", $producto->impuesto);
 		$stmt->execute();
 		$producto->id = $db->lastInsertId();
 		$db = null;
@@ -68,16 +66,16 @@ function updateProducto($id) {
 	$request = Slim::getInstance()->request();
 	$body = $request->getBody();
 	$producto = json_decode($body);
-	$sql = "UPDATE exf_producto SET nombre=:nombre, apPaterno=:apPaterno, apMaterno=:apMaterno, foto=:foto, telefono=:telefono, membresia=:membresia WHERE id_producto=:id";
+	$sql = "UPDATE exf_producto SET :nombre, :descripcion, :foto, :cantidad, :precio, :impuesto WHERE id_producto=:id";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
-		$stmt->bindParam("nombre", $producto->nombre);
-		$stmt->bindParam("apPaterno", $producto->apPaterno);
-		$stmt->bindParam("apMaterno", $producto->apMaterno);
+        $stmt->bindParam("nombre", $producto->nombre);
+		$stmt->bindParam("descripcion", $producto->descripcion);
 		$stmt->bindParam("foto", $producto->foto);
-		$stmt->bindParam("telefono", $producto->telefono);
-		$stmt->bindParam("membresia", $producto->membresia);
+		$stmt->bindParam("cantidad", $producto->cantidad);
+		$stmt->bindParam("precio", $producto->precio);
+		$stmt->bindParam("impuesto", $producto->impuesto);		
 		$stmt->bindParam("id", $id);
 		$stmt->execute();
 		$db = null;
