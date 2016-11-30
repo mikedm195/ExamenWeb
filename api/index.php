@@ -5,7 +5,7 @@ require 'Slim/Slim.php';
 $app = new Slim();
 // Definicion de end points y funciones callback
 $app->get('/cliente', 'getCliente');
-$app->get('/cliente/login', 'getLogIn');
+$app->get('/login', 'getLogIn');
 $app->post('/cliente', 'addCliente');
 $app->put('/cliente/:id', 'updateCliente');
 $app->delete('/cliente/:id','deleteCliente');
