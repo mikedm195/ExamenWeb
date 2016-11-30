@@ -7,22 +7,29 @@ if(localStorage.getItem("session") != ''){
     $('#logoutBtn').hide();
 }
 
+buscaCliente();
 function logout(){
     localStorage.setItem("session", '');
 }
 
-function buscaCliente(){
+
+function buscaCliente(){    
+    var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/getCliente/" + localStorage.getItem("session");
     $.ajax({
 		type: 'GET',
 		contentType: 'application/json',
-		url: rootURL,
+		url: url,
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
-            if(data.vino.length > 0){
-                localStorage.setItem("session", data.vino[0].id_cliente);
-                //alert(localStorage.getItem("session"));
-                window.location = "index.html";
+            var cliente = data.vino.length;
+            if(cliente > 0){
+                $('#nombreCliente').val(coiente.id);
+            	$('#apPaternoCliente').val(coiente.nombre);
+            	$('#apMaternoCliente').val(coiente.uvas);
+            	$('#fotoCliente').val(coiente.pais);
+            	$('#telefonoCliente').val(coiente.region);
+            	$('#membresiaCliente').val(coiente.anio);
             }else{
                 alert("Usuario y/o contraseña incorrectos");
             }
@@ -30,7 +37,7 @@ function buscaCliente(){
 			//$('#Idvino').val(data.id);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
-			alert('Error en la funcion agregaVino: ' + textStatus);
+			alert('Error en la funcion getCliente: ' + textStatus);
 		}
 	});
 }
