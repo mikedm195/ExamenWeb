@@ -24,23 +24,22 @@ function getLogIn() {
 		$stmt->execute();
 		$c = $stmt->fetchAll(PDO::FETCH_OBJ);
 		$db = null;
-		echo 'existe ' . $c;
 		echo '{"vino": ' . json_encode($c) . '}';
 	} catch(PDOException $e) {
 		echo '{"error":{"text":'. $e->getMessage() .'}}';
 	}
 }
 
-function getVino($id) {
-	$sql = "SELECT * FROM Vino WHERE id=:id";
+function getCliente($id) {
+	$sql = "SELECT * FROM exf_cliente WHERE id=:id";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("id", $id);
 		$stmt->execute();
-		$vino = $stmt->fetchObject();
+		$cliente = $stmt->fetchObject();
 		$db = null;
-		echo json_encode($vino);
+		echo json_encode($cliente);
 	} catch(PDOException $e) {
 		echo '{"error":{"text":'. $e->getMessage() .'}}';
 	}
