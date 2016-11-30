@@ -17,10 +17,11 @@ function login() {
 		success: function(data, textStatus, jqXHR){
             if(data.vino.length > 0){
                 localStorage.setItem("session", data.vino.id_cliente);
+                window.location = "http://www.yoururl.com";
                 window.location.replace("index.html");
             }else{
                 alert("Usuario y/o contraseña incorrectos");
-            }			
+            }
 			//$('#btnBorrar').show();
 			//$('#Idvino').val(data.id);
 		},
