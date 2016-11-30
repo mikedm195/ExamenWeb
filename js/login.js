@@ -19,7 +19,7 @@ function login() {
                 alert(JSON.stringify(data));
                 alert(data.vino);
                 alert(data.vino.id_cliente);
-                localStorage.setItem("session", data.vino.id_cliente);
+                localStorage.setItem("session", data.vino[0].id_cliente);
                 alert(localStorage.getItem("session"));
                 window.location = "index.html";
             }else{
