@@ -6,6 +6,7 @@ $app = new Slim();
 
 require 'cruds/clientes.php';
 require 'cruds/productos.php';
+require 'cruds/tiendas.php';
 
 function getConnection() {
 	$dbhost="localhost";
