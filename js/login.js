@@ -8,7 +8,6 @@ function formToJSON() {
 }
 
 function login() {
-	console.log(formToJSON());
 	$.ajax({
 		type: 'POST',
 		contentType: 'application/json',
@@ -16,7 +15,7 @@ function login() {
 		dataType: "json",
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
-			alert(data);
+			alert(json.stringify(data));
 			//$('#btnBorrar').show();
 			//$('#Idvino').val(data.id);
 		},
