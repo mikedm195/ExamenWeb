@@ -13,14 +13,12 @@ function logout(){
 }
 
 
-function buscaCliente(){    
+function buscaCliente(){
     var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/getCliente/" + localStorage.getItem("session");
     $.ajax({
 		type: 'GET',
-		contentType: 'application/json',
 		url: url,
-		dataType: "json",
-		data: formToJSON(),
+		dataType: "json",		
 		success: function(data, textStatus, jqXHR){
             var cliente = data.vino.length;
             if(cliente > 0){
