@@ -26,9 +26,9 @@ function getTienda_productos() {
 function getTienda_producto($id) {
     $sql = "SELECT t.nombre AS nombreTienda, p.nombre AS nombreProducto
         FROM exf_tienda_producto AS tp INNER JOIN exf_tienda AS t INNER JOIN exf_producto AS p
-        WHERE t.id_tienda = tp.id_tienda AND t.id_producto = tp.id_producto AND tp.id_tienda_producto = :id ";
+        WHERE t.id_tienda = tp.id_tienda AND p.id_producto = tp.id_producto AND tp.id_tienda_producto = :id ";
 	try {
-		$db = getConnection();
+		$db = getConnection()
 		$stmt = $db->prepare($sql);
 		$stmt->bindParam("id", $id);
 		$stmt->execute();
@@ -71,7 +71,7 @@ function updateTienda_producto($id) {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
         $stmt->bindParam("id_tienda", $tienda_producto->id_tienda);
-		$stmt->bindParam("id_producto", $tienda_producto->id_producto);				
+		$stmt->bindParam("id_producto", $tienda_producto->id_producto);
 		$stmt->bindParam("id", $id);
 		$stmt->execute();
 		$db = null;
