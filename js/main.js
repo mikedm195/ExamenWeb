@@ -1,4 +1,4 @@
-document.onload = function(){
+function onload(){
     alert(localStorage.getItem("session"));
     if(localStorage.getItem("session") == ''){
         $('#loginBtn').hide();
