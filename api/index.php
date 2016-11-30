@@ -73,24 +73,24 @@ function addCliente() {
 	}
 }
 
-function updateVino($id) {
+function updateCliente($id) {
 	$request = Slim::getInstance()->request();
 	$body = $request->getBody();
-	$vino = json_decode($body);
-	$sql = "UPDATE Vino SET nombre=:nombre, uvas=:uvas, pais=:pais, region=:region, anio=:anio, descripcion=:descripcion WHERE id=:id";
+	$cliente = json_decode($body);
+	$sql = "UPDATE Vino SET nombre=:nombre, apPaterno=:apPaterno, apMaterno=:apMaterno, foto=:foto, telefono=:telefono, membresia=:membresia WHERE id_cliente=:id";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
-		$stmt->bindParam("nombre", $vino->nombre);
-		$stmt->bindParam("uvas", $vino->uvas);
-		$stmt->bindParam("pais", $vino->pais);
-		$stmt->bindParam("region", $vino->region);
-		$stmt->bindParam("anio", $vino->anio);
-		$stmt->bindParam("descripcion", $vino->descripcion);
+		$stmt->bindParam("nombre", $cliente->nombre);
+		$stmt->bindParam("apPaterno", $cliente->apPaterno);
+		$stmt->bindParam("apMaterno", $cliente->apMaterno);
+		$stmt->bindParam("foto", $cliente->foto);
+		$stmt->bindParam("telefono", $cliente->telefono);
+		$stmt->bindParam("membresia", $cliente->membresia);
 		$stmt->bindParam("id", $id);
 		$stmt->execute();
 		$db = null;
-		echo json_encode($vino);
+		echo json_encode($cliente);
 	} catch(PDOException $e) {
 		echo '{"error":{"text":'. $e->getMessage() .'}}';
 	}
