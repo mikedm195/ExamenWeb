@@ -4,7 +4,7 @@ require 'Slim/Slim.php';
 
 $app = new Slim();
 // Definicion de end points y funciones callback
-$app->get('/cliente', 'getCliente');
+$app->get('/cliente/:id', 'getCliente');
 $app->post('/login', 'getLogIn');
 $app->post('/cliente', 'addCliente');
 $app->put('/cliente/:id', 'updateCliente');
@@ -30,7 +30,7 @@ function getLogIn() {
 	}
 }
 
-function getCliente($id) {	
+function getCliente($id) {
 	$sql = "select * from exf_cliente where id_cliente=:id";
 	try {
 		$db = getConnection();
