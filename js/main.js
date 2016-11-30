@@ -28,7 +28,6 @@ function buscaCliente(){
                 $('#nombreCliente').val(cliente.nombre);
             	$('#apPaternoCliente').val(cliente.apPaterno);
             	$('#apMaternoCliente').val(cliente.apMaterno);
-            	$('#fotoCliente').val(cliente.foto);
             	$('#telefonoCliente').val(cliente.telefono);
             	$('#membresiaCliente').val(cliente.membresia);
                 $('#userCliente').val(cliente.user);
@@ -36,8 +35,6 @@ function buscaCliente(){
             }else{
                 alert("Usuario y/o contraseña incorrectos");
             }
-			//$('#btnBorrar').show();
-			//$('#Idvino').val(data.id);
 		},
 		error: function(jqXHR, textStatus, errorThrown){
 			alert('Error en la funcion getCliente: ' + textStatus);
@@ -63,7 +60,7 @@ function  actualizarCliente(){
 		type: 'PUT',
 		contentType: 'application/json',
 		url: url,
-		dataType: "jsonp",
+		dataType: "json",
 		data: obtenerDatosCliente(),
 		success: function(data, textStatus, jqXHR){
 			console.log('Cliente actualizado exitosamente');
