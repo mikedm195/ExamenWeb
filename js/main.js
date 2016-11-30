@@ -21,7 +21,7 @@ function buscaCliente(){
 		url: url,
 		dataType: "json",
 		success: function(data, textStatus, jqXHR){
-            var cliente = data.vino;
+            var cliente = data;
             console.log(cliente);
             console.log(data);
             if(cliente){
