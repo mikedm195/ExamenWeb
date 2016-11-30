@@ -25,12 +25,12 @@ function buscaCliente(){
             console.log(cliente);
             console.log(data);
             if(cliente){
-                $('#nombreCliente').val(cliente.id);
-            	$('#apPaternoCliente').val(cliente.nombre);
-            	$('#apMaternoCliente').val(cliente.uvas);
-            	$('#fotoCliente').val(cliente.pais);
-            	$('#telefonoCliente').val(cliente.region);
-            	$('#membresiaCliente').val(cliente.anio);
+                $('#nombreCliente').val(cliente.nombre);
+            	$('#apPaternoCliente').val(cliente.apPaterno);
+            	$('#apMaternoCliente').val(cliente.apMaterno);
+            	$('#fotoCliente').val(cliente.foto);
+            	$('#telefonoCliente').val(cliente.telefono);
+            	$('#membresiaCliente').val(cliente.membresia);
             }else{
                 alert("Usuario y/o contraseña incorrectos");
             }
