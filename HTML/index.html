@@ -21,15 +21,15 @@
 
 <body>
 
-    <script type="text/javascript">
-        if(localStorage.getItem("session") == ''){
-            $('#loginBtn').hide();
-            $('#logoutBtn').show();
-        }else{
-            $('#loginBtn').show();
-            $('#logoutBtn').hide();
-        }
-    </script>
+        <script type="text/javascript">
+            if(localStorage.getItem("session") == ''){
+                $('#loginBtn').hide();
+                $('#logoutBtn').show();
+            }else{
+                $('#loginBtn').show();
+                $('#logoutBtn').hide();
+            }
+        </script>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -172,6 +172,7 @@
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
+    <script src="../js/jquery-1.7.1.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
