@@ -20,8 +20,7 @@ function login() {
                 window.location.replace("index.html");
             }else{
                 alert("Usuario y/o contraseña incorrectos");
-            }
-			alert(JSON.stringify(data));
+            }			
 			//$('#btnBorrar').show();
 			//$('#Idvino').val(data.id);
 		},
