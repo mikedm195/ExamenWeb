@@ -16,7 +16,7 @@ function login() {
 		data: formToJSON(),
 		success: function(data, textStatus, jqXHR){
             if(data.vino.length > 0){
-                alert(data);
+                alert(JSON.stringify.data);
                 alert(data.vino);
                 alert(data.vino.id_cliente);
                 localStorage.setItem("session", data.vino.id_cliente);
