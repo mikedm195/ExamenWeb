@@ -72,7 +72,7 @@ function updateCliente($id) {
 	$request = Slim::getInstance()->request();
 	$body = $request->getBody();
 	$cliente = json_decode($body);
-	$sql = "UPDATE exf_cliente SET nombre=:nombre, apPaterno=:apPaterno, apMaterno=:apMaterno, foto=:foto, telefono=:telefono, membresia=:membresia WHERE id_cliente=:id";
+	$sql = "UPDATE exf_cliente SET nombre=:nombre, apPaterno=:apPaterno, apMaterno=:apMaterno, foto=:foto, telefono=:telefono, membresia=:membresia, user=:user, password=:password WHERE id_cliente=:id";
 	try {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);
@@ -82,6 +82,10 @@ function updateCliente($id) {
 		$stmt->bindParam("foto", $cliente->foto);
 		$stmt->bindParam("telefono", $cliente->telefono);
 		$stmt->bindParam("membresia", $cliente->membresia);
+		$stmt->bindParam("telefono", $cliente->telefono);
+		$stmt->bindParam("membresia", $cliente->membresia);
+		$stmt->bindParam("user", $cliente->user);
+		$stmt->bindParam("password", $cliente->password);
 		$stmt->bindParam("id", $id);
 		$stmt->execute();
 		$db = null;

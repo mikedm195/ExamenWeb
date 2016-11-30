@@ -50,7 +50,9 @@ function obtenerDatosCliente() {
             "apMaterno": $('#apMaternoCliente').val(),
             "foto": $('#fotoCliente').val(),
             "telefono": $('#telefonoCliente').val(),
-            "membresia": $('#membresiaCliente').val()
+            "membresia": $('#membresiaCliente').val(),
+            "user": $('#userCliente').val(),
+            "password": $('#passwordCliente').val(),
 		});
 }
 
