@@ -79,7 +79,7 @@ buscarTiendas();
 
 $('#listaTiendas').on("click", function() {
     console.log("hola");
-    console.log($(this).data());
+    console.log($(this).data('id'));
 	buscaTiendaId($(this).data());
 });
 
@@ -112,7 +112,7 @@ function buscarTiendas() {
         	$('#listaTiendas li').remove();
         	$.each(data, function(index, tienda) {
                 console.log(tienda.id_tienda);
-        		$('#listaTiendas').append('<li class="list-group-item" data-id="' + tienda.id_tienda + '"><a href="#tiendas">'+tienda.nombre+'</a></li>');
+        		$('#listaTiendas').append('<li class="list-group-item"><a href="#tiendas" data-id="' + data.id_tienda + '">' +tienda.nombre+'</a></li>');
         	});
 		}
 	});
