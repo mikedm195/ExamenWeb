@@ -77,7 +77,7 @@ function  actualizarCliente(){
 //============tienda======================//
 buscarTiendas();
 
-$('#listaTiendas a').live('click', function() {
+$('#listaTiendas a').on('click', function() {
 	buscaTiendaId($(this).data('identidad'));
 });
 
