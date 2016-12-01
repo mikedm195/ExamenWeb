@@ -77,7 +77,7 @@ function  actualizarCliente(){
 //============tienda======================//
 buscarTiendas();
 
-$('input[type=radio][name=radioTienda]').change(function() {
+$('input[name=radioTienda]:radio').change(function() {
     console.log(this.value);
     console.log("hola");
     console.log($(this).data('id'));
