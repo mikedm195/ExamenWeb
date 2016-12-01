@@ -15,6 +15,7 @@ function obtenerDatosCliente() {
 
 function insertCliente() {
     var datos = obtenerDatosCliente();
+    console.log(datos);
     if(datos.nombre && datos.apPaterno && datos.apMaterno && datos.user && datos.password){
     	$.ajax({
     		type: 'POST',
