@@ -113,7 +113,7 @@ function buscarTiendas() {
         	$('#listaTiendas li').remove();
         	$.each(data, function(index, tienda) {
                 console.log(tienda.id_tienda);
-        		$('#listaTiendas').append('<li class="list-group-item"><input type="radio" name="radioTienda" id="radioTienda" value="' + data.id_tienda + '">' +tienda.nombre+'</li>');
+                $('#listaTiendas').append('<li class="list-group-item"><a href="#" data-id="' + tienda.id_tienda + '">'+ tienda.nombre+'</a></li>');        		
         	});
 		}
 	});
