@@ -79,13 +79,13 @@ buscarTiendas();
 
 $('#listaTiendas').on("click", function() {
     console.log("hola");
-    console.log($(this).data('identidad'));
+    console.log($(this).dataset.identidad);
 	buscaTiendaId($(this).data('identidad'));
 });
 
 $('#listaTiendas li').on("click", function() {
     console.log("hola li");
-    console.log($(this).data('identidad'));
+    console.log($(this).dataset.identidad);
 	buscaTiendaId($(this).data('identidad'));
 });
 
