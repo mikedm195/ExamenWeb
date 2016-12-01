@@ -99,6 +99,7 @@ function buscarTiendas() {
 
 function buscaTiendaId(id) {
     var url = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/tienda/"+id;
+    console.log(id);
 	$.ajax({
 		type: 'GET',
 		url: url,
