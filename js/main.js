@@ -79,7 +79,7 @@ buscarTiendas();
 
 $('#listaTiendas').on("click", function() {
     console.log("hola");
-	buscaTiendaId($(this).data('id'));
+	buscaTiendaId($(this).data('id').data());
 });
 
 $('#listaTiendas li').on("click", function() {
