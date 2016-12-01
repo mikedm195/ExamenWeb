@@ -21,7 +21,7 @@ function insertCliente() {
     	$.ajax({
     		type: 'POST',
     		contentType: 'application/json',
-    		url: rootURL,
+    		url: "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/cliente",
     		dataType: "json",
     		data: d,
     		success: function(data, textStatus, jqXHR){
