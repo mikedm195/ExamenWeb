@@ -1,7 +1,7 @@
 var rootURL = "http://ubiquitous.csf.itesm.mx/~daw-1015019/content/ExamenWeb/api/index.php/login";
 
 function obtenerDatosCliente() {
-	return JSON.stringify({
+	return {
             "nombre": $('#nombreCliente').val(),
             "apPaterno": $('#apPaternoCliente').val(),
             "apMaterno": $('#apMaternoCliente').val(),
@@ -10,19 +10,20 @@ function obtenerDatosCliente() {
             "membresia": $('#membresiaCliente').val(),
             "user": $('#userCliente').val(),
             "password": $('#passwordCliente').val(),
-		});
+		};
 }
 
 function insertCliente() {
     var datos = obtenerDatosCliente();
     console.log(datos);
     if(datos.nombre && datos.apPaterno && datos.apMaterno && datos.user && datos.password){
+        var d = JSON.stringify(datos);
     	$.ajax({
     		type: 'POST',
     		contentType: 'application/json',
     		url: rootURL,
     		dataType: "json",
-    		data: obtenerDatosCliente(),
+    		data: d,
     		success: function(data, textStatus, jqXHR){
 
                 window.location = "index.html";
