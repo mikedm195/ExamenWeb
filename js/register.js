@@ -14,20 +14,24 @@ function obtenerDatosCliente() {
 }
 
 function insertCliente() {
+    var datos = obtenerDatosCliente();
+    if(datos.nombre && datos.apPaterno && datos.apMaterno && datos.user && datos.password){
+    	$.ajax({
+    		type: 'POST',
+    		contentType: 'application/json',
+    		url: rootURL,
+    		dataType: "json",
+    		data: obtenerDatosCliente(),
+    		success: function(data, textStatus, jqXHR){
 
-	$.ajax({
-		type: 'POST',
-		contentType: 'application/json',
-		url: rootURL,
-		dataType: "json",
-		data: obtenerDatosCliente(),
-		success: function(data, textStatus, jqXHR){
+                window.location = "index.html";
 
-            window.location = "index.html";
-
-		},
-		error: function(jqXHR, textStatus, errorThrown){
-			alert('Error al agregar cliente: ' + textStatus);
-		}
-	});
+    		},
+    		error: function(jqXHR, textStatus, errorThrown){
+    			alert('Error al agregar cliente: ' + textStatus);
+    		}
+    	});
+    }else{
+        alert("Llene los campos obligatorios");
+    }
 }
