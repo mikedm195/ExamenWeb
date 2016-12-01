@@ -13,7 +13,7 @@ function obtenerDatosCliente() {
 		});
 }
 
-function insertUser() {
+function insertCliente() {
 
 	$.ajax({
 		type: 'POST',
