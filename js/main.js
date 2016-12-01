@@ -78,6 +78,25 @@ function  actualizarCliente(){
 buscarTiendas();
 
 $('#listaTiendas').on("click", function() {
+    console.log("hola");
+    console.log($(this).data('identidad'));
+	buscaTiendaId($(this).data('identidad'));
+});
+
+$('#listaTiendas li').on("click", function() {
+    console.log("hola li");
+    console.log($(this).data('identidad'));
+	buscaTiendaId($(this).data('identidad'));
+});
+
+$('#listaTiendas a').on("click", function() {
+    console.log("hola a");
+    console.log($(this).data('identidad'));
+	buscaTiendaId($(this).data('identidad'));
+});
+
+$('#listaTiendas li a').on("click", function() {
+    console.log("hola li a");
     console.log($(this).data('identidad'));
 	buscaTiendaId($(this).data('identidad'));
 });
