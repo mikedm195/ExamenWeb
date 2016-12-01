@@ -1,63 +1,42 @@
 <!doctype html>
 <html>
 <head>
-  <title>EzMoney | LogIn</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <title>EzMoney | LogIn</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
     <div class="container">
-            <form class="form-horizontal" role="form" method="POST" action="../PHP/register.php" enctype="multipart/form-data">
-                <h2>Registration Form</h2>
-                <div class="form-group ">
-                    <label for="firstName" class="col-md-3 control-label">First Name</label>
-                    <div class="col-md-9">
-                        <input type="text" name="name" id="firstName" placeholder="First Name" class="form-control" autofocus>
-                    </div>
-                </div>
-                <div class="form-group ">
-                    <label for="lastName" class="col-md-3 control-label">Last Name</label>
-                    <div class="col-md-9">
-                        <input type="text" name="lastname" id="lastName" placeholder="Last Name"class="form-control">
-                    </div>
-                </div>
-                <div class="form-group ">
-                    <label for="email" class="col-md-3 control-label">Email</label>
-                    <div class="col-md-9">
-                        <input type="email" name="email" id="email" placeholder="Email" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group ">
-                    <label for="password" class="col-md-3 control-label">Password</label>
-                    <div class="col-md-9">
-                        <input type="password" name="password" id="password" placeholder="Password" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group ">
-                    <label for="passwordConfirm" class="col-md-3 control-label">Confirm Password</label>
-                    <div class="col-md-9">
-                        <input type="password" name="passwordconf" id="passwordConfirm" placeholder="Confirm Password" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="imge" class="col-md-3 control-label">Profile Picture</label>
-                    <div class="col-md-9">
-                        <input name="MAX_FILE_SIZE" value="102400" type="hidden">
-                        <input type="file" name="image" id="imge" accept="image/jpeg">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-9 col-md-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    </div>
-                </div>
-                </div>
-            </form> <!-- /form -->
-        </div> <!-- ./container -->
+        <h2>Registro</h2>
+        <p class="section-paragraph">Nombre</p>
+        <input type="text" class="form-control" id="nombreCliente" value="">
+        <p class="section-paragraph">Apellido paterno</p>
+        <input type="text" class="form-control" id="apPaternoCliente" value="">
+        <p class="section-paragraph">Apellido materno</p>
+        <input type="text" class="form-control"id="apMaternoCliente" value="">
+        <p class="section-paragraph">Foto</p>
+        <input type="file" class="form-control"id="fotoCliente" value="">
+        <p class="section-paragraph">Telefono</p>
+        <input type="text" class="form-control"id="telefonoCliente" value="">
+        <select class="selectpicker" id="membresiaCliente">
+            <option value=""></option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+        </select>
+        <p class="section-paragraph">Usuario</p>
+        <input type="text" class="form-control"id="userCliente" value="">
+        <p class="section-paragraph">Contraseña</p>
+        <input type="text" class="form-control"id="passwordCliente" value="">
+        <button class="btn btn-lg btn-primary btn-block" onclick="insertCliente()">Actualizar</button>
+    </div>
+</div> <!-- ./container -->
+
+<script src="../js/jquery-1.7.1.min.js"></script>
+<script src="../js/register.js"></script>
 
 </body>
 </html>
