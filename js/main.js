@@ -77,17 +77,17 @@ function  actualizarCliente(){
 //============tienda======================//
 buscarTiendas();
 
+$('#listaTiendas li').on("click", function() {
+    console.log("hola li");
+    console.log($(this).dataset.identidad);
+    buscaTiendaId($(this).data('identidad'));
+});
 $('#listaTiendas').on("click", function() {
     console.log("hola");
     console.log($(this).data('id'));
 	buscaTiendaId($(this).data('identidad'));
 });
 
-$('#listaTiendas li').on("click", function() {
-    console.log("hola li");
-    console.log($(this).dataset.identidad);
-	buscaTiendaId($(this).data('identidad'));
-});
 
 $('#listaTiendas a').on("click", function() {
     console.log("hola a");
