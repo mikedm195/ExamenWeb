@@ -43,6 +43,7 @@ $('#btnBorrar').click(function() {
 });
 
 $('#listaVino a').live('click', function() {
+	console.log("hola");
 	findById($(this).data('identidad'));
 });
 
@@ -53,7 +54,7 @@ $("img").error(function(){
 });
 
 function search(llaveBuscar) {
-	if (llaveBuscar == '') 
+	if (llaveBuscar == '')
 		buscaTodo();
 	else
 		findByName(llaveBuscar);
@@ -81,7 +82,7 @@ function findByName(llaveBuscar) {
 		type: 'GET',
 		url: rootURL + '/search/' + llaveBuscar,
 		dataType: "jsonp",
-		success: renderList 
+		success: renderList
 	});
 }
 
@@ -175,8 +176,8 @@ function renderDetails(vino) {
 // Función auxiliar para serializar todos los campos de formulario en una cadena JSON
 function formToJSON() {
 	return JSON.stringify({
-		"id": $('#Idvino').val(), 
-		"nombre": $('#nombre').val(), 
+		"id": $('#Idvino').val(),
+		"nombre": $('#nombre').val(),
 		"uvas": $('#uvas').val(),
 		"pais": $('#pais').val(),
 		"region": $('#region').val(),
