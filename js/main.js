@@ -112,7 +112,7 @@ function buscarTiendas() {
         	$('#listaTiendas li').remove();
         	$.each(data, function(index, tienda) {
                 console.log(tienda.id_tienda);
-        		$('#listaTiendas').append('<li><a href="#tiendas" data-id="' + tienda.id_tienda + '">'+tienda.nombre+'</a></li>');
+        		$('#listaTiendas').append('<li data-id="' + tienda.id_tienda + '"><a href="#tiendas">'+tienda.nombre+'</a></li>');
         	});
 		}
 	});
