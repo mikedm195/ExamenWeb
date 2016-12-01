@@ -77,17 +77,16 @@ function  actualizarCliente(){
 //============tienda======================//
 buscarTiendas();
 
+$('#listaTiendas').on("click", function() {
+    console.log("hola");
+	buscaTiendaId($(this).data('id'));
+});
+
 $('#listaTiendas li').on("click", function() {
     console.log("hola li");
     console.log($(this).dataset.identidad);
-    buscaTiendaId($(this).data('identidad'));
-});
-$('#listaTiendas').on("click", function() {
-    console.log("hola");
-    console.log($(this).data('id'));
 	buscaTiendaId($(this).data('identidad'));
 });
-
 
 $('#listaTiendas a').on("click", function() {
     console.log("hola a");
@@ -112,7 +111,7 @@ function buscarTiendas() {
         	$('#listaTiendas li').remove();
         	$.each(data, function(index, tienda) {
                 console.log(tienda.id_tienda);
-        		$('#listaTiendas').append('<li data-id="' + tienda.id_tienda + '"><a href="#tiendas">'+tienda.nombre+'</a></li>');
+        		$('#listaTiendas').append('<li class="list-group-item" data-id="' + tienda.id_tienda + '"><a href="#tiendas">'+tienda.nombre+'</a></li>');
         	});
 		}
 	});
