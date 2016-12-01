@@ -79,7 +79,7 @@ buscarTiendas();
 
 $('#listaTiendas').on("click", function() {
     console.log("hola");
-    console.log($(this).dataset.identidad);
+    console.log($(this).attr('data-identidad'));
 	buscaTiendaId($(this).data('identidad'));
 });
 
